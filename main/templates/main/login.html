@@ -1,0 +1,11 @@
+<!DOCTYPE html> {% if not user.is_authenticated %} <form method="post" action="{% url 'login' %}"> {% csrf_token %} <label for="username">Kullanıcı Adı:</label>
+      <input type="text" name="username" id="username">
+      <br>
+      <label for="password">Şifre:</label>
+      <input type="password" name="password" id="password">
+      <br>
+      <button type="submit">Giriş Yap</button>
+      <a href="{% url 'register' %}">Hesap Oluştur</a>
+</form> {% else %} <p>Mevcut Kullanıcı: {{ user.username }}</p>
+<form method="post" action="{% url 'logout' %}"> {% csrf_token %} <button type="submit">Çıkış Yap</button>
+</form> {% endif %}
