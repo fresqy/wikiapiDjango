@@ -6,6 +6,9 @@ from django.contrib.auth import authenticate, login
 
 
 # Create your views here.
+def logout(request):
+    return render(request, 'logout.html')
+
 def login_view(request):
     if request.method == 'POST':
         username = request.POST['username']
