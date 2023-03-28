@@ -63,9 +63,17 @@
     </style>
   </head>
   <body>
+   <div class="navbar">
+      <a href="/home">Home</a>
+      <a href="/wiki">Wiki</a>
+      <a href="/archive">Archives</a>
+      <a href="/contact">Contact</a>
+   </div>
+
     <h1>Wikipedia Search</h1>
     <form method="post"> {% csrf_token %} <input type="text" name="search">
       <button type="submit">Search</button>
     </form> {% if result %} <div class="result">{{result}}</div> {% endif %}
+
   </body>
 </html>

@@ -1,13 +1,11 @@
-from django.shortcuts import HttpResponse
-import wikipedia
+
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 
 
 # Create your views here.
-def logout(request):
-    return render(request, 'logout.html')
+
 
 def login_view(request):
     if request.method == 'POST':
@@ -24,6 +22,8 @@ def login_view(request):
         return render(request, 'login.html')
 
 
+
+
 def register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
@@ -38,13 +38,6 @@ def register(request):
         form = UserCreationForm()
     return render(request, 'main/register.html', {'form': form})
 
+def logout(request):
+    return render(request, 'logout.html')
 
-def home(request):
-    if request.method == "POST":
-        search = request.POST['search']
-        try:
-            result = wikipedia.summary(search, sentences=30)
-        except:
-            return HttpResponse("Wrong Input")
-        return render(request, "main/index.html", {"result": result})
-    return render(request, "main/index.html")
