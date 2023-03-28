@@ -11,5 +11,5 @@ register on server,
 
 -add notes to your archive
 
--personal direcories for your unique working enviroment 
+-personal directories for your unique working enviroment 
 
