@@ -1,43 +1,91 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Holy Archives</title>
-    <style>
-      /* Style the navigation bar */
-      .navbar {
-        background-color: #E0C9A6;
-        overflow: hidden;
-      }
+<html lang="en">
 
-      /* Style the links inside the navigation bar */
-      .navbar a {
-        float: left;
-        display: block;
-        color: #444;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>logout</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+ <style>
+      @import url("https://fonts.googleapis.com/css2?family=Sriracha&display=swap");
 
-      /* Change the color of links on hover */
-      .navbar a:hover {
-        background-color: #ddd;
-        color: black;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- The navigation bar -->
-    <div class="navbar">
-      <a href="">Home</a>
+    body {
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    /* CSS for header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f5f5f5;
+    }
+
+    .header .logo {
+      font-size: 25px;
+      font-family: "Sriracha", cursive;
+      color: #000;
+      text-decoration: none;
+      margin-left: 30px;
+    }
+
+    .nav-items {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: #f5f5f5;
+      margin-right: 20px;
+    }
+
+    .nav-items a {
+      text-decoration: none;
+      color: #000;
+      padding: 35px 20px;
+    }
+
+    /* CSS for main element */
+    .intro {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 520px;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://images.unsplash.com/photo-1537498425277-c283d32ef9db?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=878&q=80");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .intro h1 {
+      font-family: sans-serif;
+      font-size: 100px;
+      color: #fff;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+
+  </style>
+<body>
+  <header class="header">
+    <a href="/home" class="logo">Kosengincan</a>
+    <nav class="nav-items">
+      <a href="/home">Home</a>
       <a href="/wiki">Wiki</a>
-      <a href="/archive">Archives</a>
-      <a href="/contact">Contact</a>
+      <a href="/Archives">Archives</a>
+      <a href="/">Logout</a>
+    </nav>
+  </header>
+  <main>
+    <div class="intro">
+      <h1></h1>
     </div>
+   </main>
+</body>
 
-    <!-- Rest of your website content -->
-    <h1>This site is under construction!!!
-    (but you can still use wiki app)</h1>
-    <p></p>
-  </body>
 </html>
