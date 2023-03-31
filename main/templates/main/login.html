@@ -1,11 +1,99 @@
-<!DOCTYPE html> {% if not user.is_authenticated %} <form method="post" action="{% url 'login' %}"> {% csrf_token %} <label for="username">Kullanıcı Adı:</label>
-      <input type="text" name="username" id="username">
-      <br>
-      <label for="password">Şifre:</label>
-      <input type="password" name="password" id="password">
-      <br>
-      <button type="submit">Giriş Yap</button>
-      <a href="{% url 'register' %}">Hesap Oluştur</a>
-</form> {% else %} <p>Mevcut Kullanıcı: {{ user.username }}</p>
-<form method="post" action="{% url 'logout' %}"> {% csrf_token %} <button type="submit">Çıkış Yap</button>
-</form> {% endif %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Giriş Yap</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f0f0f0;
+			padding: 50px;
+		}
+
+		form {
+			background-color: #fff;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+			width: 400px;
+			margin: 0 auto;
+		}
+
+		input[type="text"], input[type="password"] {
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			width: 100%;
+			margin-bottom: 10px;
+			box-sizing: border-box;
+		}
+
+		label {
+			display: block;
+			font-weight: bold;
+			margin-bottom: 5px;
+		}
+
+		button {
+			background-color: #007bff;
+			color: #fff;
+			padding: 10px 20px;
+			border-radius: 5px;
+			border: none;
+			cursor: pointer;
+		}
+
+		button:hover {
+			background-color: #0069d9;
+		}
+
+		a {
+			color: #007bff;
+			text-decoration: none;
+			margin-left: 10px;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		.message {
+			margin-top: 20px;
+			padding: 10px;
+			border-radius: 5px;
+			background-color: #28a745;
+			color: #fff;
+			display: none;
+		}
+
+		.message.show {
+			display: block;
+		}
+
+		.error_message {
+			color: #dc3545;
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	{% if not user.is_authenticated %}
+	<form method="post" action="{% url 'login' %}">
+		{% csrf_token %}
+		<label for="username">Username:</label>
+		<input type="text" name="username" id="username">
+		<label for="password">Password:</label>
+		<input type="password" name="password" id="password">
+		{% if error_message %}
+		{% endif %}
+		<button type="submit">Login</button>
+		<a href="{% url 'register' %}">Sign in</a>
+	</form>
+	{% else %}
+	<p>Current User: {{ user.username }}</p>
+	<form method="post" action="{% url 'logout' %}">
+		{% csrf_token %}
+		<button type="submit">Sign out</button>
+	</form>
+	{% endif %}
+</body>
+</html>

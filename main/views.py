@@ -1,10 +1,7 @@
-
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
-
-
-# Create your views here.
+from django.contrib.auth import logout
 
 
 def login_view(request):
@@ -16,8 +13,7 @@ def login_view(request):
             login(request, user)
             return redirect('home')
         else:
-            # Kullanıcı adı veya şifre yanlış, formu hatalı göster.
-            return render(request, 'login.html', {'error_message': 'Kullanıcı adı veya şifre yanlış.'})
+            return render(request, 'login.html',)
     else:
         return render(request, 'login.html')
 
@@ -38,6 +34,7 @@ def register(request):
         form = UserCreationForm()
     return render(request, 'main/register.html', {'form': form})
 
-def logout(request):
-    return render(request, 'logout.html')
+def logout_view(request):
+    logout(request)
+    return render(request, 'main/logout.html')
 
