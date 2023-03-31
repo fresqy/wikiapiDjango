@@ -13,3 +13,4 @@ register on server,
 
 -personal directories for your unique working enviroment 
 
+![Ekran görüntüsü 2023-03-31 215706](https://user-images.githubusercontent.com/114874389/229206464-a3ff4837-d023-493c-bd42-7f2c08c61366.png)
