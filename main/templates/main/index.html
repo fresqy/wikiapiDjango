@@ -96,9 +96,20 @@
    </div>
 
     <h1>Wikipedia Search</h1>
-    <form method="post"> {% csrf_token %} <input type="text" name="search">
-      <button type="submit">Search</button>
-    </form> {% if result %} <div class="result">{{result}}</div> {% endif %}
+    <form method="post">
+  {% csrf_token %}
+  <input type="text" name="search">
+  <button type="submit">Search</button>
+</form>
+{% if result %}
+  <div class="result">{{result}}</div>
+  <form method="post" action="{% url 'save_search' %}">
+    {% csrf_token %}
+    <input type="hidden" name="query" value="{{ search }}">
+    <input type="hidden" name="result" value="{{ result }}">
+    <button type="submit">Save</button>
+  </form>
+{% endif %}
 
   </body>
 </html>
