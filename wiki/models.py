@@ -10,4 +10,5 @@ class SavedSearch(models.Model):
     objects = models.Manager()
 
     def __str__(self):
-        return self.query
+        return f"{self.query} ({self.user.username}, {self.created_at.strftime('%Y-%m-%d %H:%M:%S')})"
+
