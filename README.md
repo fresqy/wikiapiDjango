@@ -7,7 +7,7 @@ register on server,
 
 ###upcoming features###
 
--save your search
+-save your search -done!
 
 -add notes to your archive
 
