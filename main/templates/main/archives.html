@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Archives</title>
+  </head>
+  <body>
+    <h1>Archives</h1>
+    <ul>
+      {% for search in searches %}
+        <li>
+          <h3>{{ search.query }}</h3>
+          <p>{{ search.result }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
