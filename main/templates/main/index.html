@@ -3,32 +3,41 @@
   <head>
     <title>Wiki</title>
     <style>
-     /* Style the navigation bar */
+      @import url("https://fonts.googleapis.com/css2?family=Sriracha&display=swap");
+
+      /* Style the navigation bar */
       .navbar {
-        background-color: #fff;
-        overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f5f5f5;
+        height: 80px;
       }
 
-      /* Style the links inside the navigation bar */
-      .navbar a {
-        float: left;
-        display: block;
-        color: #444;
-        text-align: center;
-        padding: 14px 16px;
+      .navbar .logo {
+        font-size: 25px;
+        font-family: "Sriracha", cursive;
+        color: #000;
         text-decoration: none;
+        margin-left: 30px;
       }
-      body {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      background: url("https://images.pexels.com/photos/69004/pexels-photo-69004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
 
+      .navbar a {
+        text-decoration: none;
+        color: #000;
+        padding: 35px 20px;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background: url("https://images.pexels.com/photos/69004/pexels-photo-69004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
       }
 
       h1 {
@@ -68,8 +77,6 @@
         background-color: #3e8e41;
       }
 
-
-
       .result {
         margin-top: 50px;
         padding: 20px;
@@ -88,12 +95,15 @@
     </style>
   </head>
   <body>
-   <div class="navbar">
-      <a href="/home">Home</a>
-      <a href="/wiki">Wiki</a>
-      <a href="wikiarchives">Archives</a>
-      <a href="/contact">Contact</a>
-   </div>
+    <div class="navbar">
+      <a href="/home" class="logo">Kosengincan</a>
+      <nav class="nav-items">
+        <a href="/home">Home</a>
+        <a href="/wiki">Wiki</a>
+        <a href="/wikiarchives">Archives</a>
+        <a href="/logout">Logout</a>
+      </nav>
+    </div>
 
     <h1>Wikipedia Search</h1>
     <form method="post">
