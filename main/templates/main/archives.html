@@ -42,6 +42,11 @@
       padding: 35px 20px;
     }
 
+    .result {
+      margin: 20px;
+      padding: 10px;
+      background-color: #3332;
+    }
 
    </style>
   <body>
@@ -55,7 +60,7 @@
     </nav>
     </header>
     <h1>Archives</h1>
-    <ul>
+    <div>
       {% for search in searches %}
        <div class="result">
         <h2>{{ search.query }}</h2>
@@ -63,6 +68,6 @@
         <p>Created at: {{ search.created_at }}</p>
        </div>
       {% endfor %}
-    </ul>
+    </div>
   </body>
 </html>
